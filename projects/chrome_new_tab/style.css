@@ -339,8 +339,8 @@ body {
   padding: 3px;
   width: 90px;
   color: white;
-  background-color: #f7a707;
-  border: 1px solid #f7a707;
+  background-color: var(--yellowColor);
+  border: 1px solid var(--yellowColor);
   border-radius: 5px;
   font-size: 17px;
   cursor: pointer;
@@ -492,8 +492,8 @@ body {
 }
 .task-checkbox:checked + label {
   color: #fff;
-  background-color: #f7a707;
-  border: 1px solid #f7a707;
+  background-color: var(--yellowColor);
+  border: 1px solid var(--yellowColor);
 }
 
 .task .task-text {
@@ -591,8 +591,8 @@ form.notes-form button {
   width: 140px;
   margin-left: auto;
   cursor: pointer;
-  background-color: #f7a707;
-  border: 1px solid #f7a707;
+  background-color: var(--yellowColor);
+  border: 1px solid var(--yellowColor);
 }
 
 /* Added note */
@@ -632,7 +632,7 @@ form.notes-form button {
   text-align: center;
   line-height: 20px;
   border-radius: 50%;
-  background-color: #f7a707;
+  background-color: var(--yellowColor);
   cursor: pointer;
   user-select: none;
 }
@@ -741,7 +741,7 @@ h3.setting-tile-heading {
 
 .hour-format-radio:checked + label,
 .search-engine-radio:checked + label {
-  background-color: #f7a707;
+  background-color: var(--yellowColor);
 }
 
 /* Message Input Name */
@@ -774,7 +774,7 @@ h3.setting-tile-heading {
 }
 
 .layout-radios:checked + .layout-labels {
-  background-color: #f7a707;
+  background-color: var(--yellowColor);
 }
 
 /* Shortcut show */
@@ -811,8 +811,8 @@ h3.setting-tile-heading {
 }
 
 .show-checkbox:checked + label .select-checkbox {
-  background-color: #f7a707;
-  border: 1px solid #f7a707;
+  background-color: var(--yellowColor);
+  border: 1px solid var(--yellowColor);
 }
 
 /* Reset Setting */
@@ -822,7 +822,7 @@ h3.setting-tile-heading {
 
 button#reset-setting-btn {
   padding: 3px 10px;
-  background-color: #f7a707;
+  background-color: var(--yellowColor);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -859,8 +859,8 @@ button#reset-setting:hover {
 .confirmation-btns button {
   width: 80px;
   color: white;
-  background-color: #f7a707;
-  border: 1px solid #f7a707;
+  background-color: var(--yellowColor);
+  border: 1px solid var(--yellowColor);
   border-radius: 5px;
   padding: 3px;
   cursor: pointer;
@@ -874,6 +874,6 @@ button#reset-setting:hover {
 .confirmation-btns #cancel-btn {
   background-color: white;
   color: #333;
-  border: 1px solid #f7a707;
+  border: 1px solid var(--yellowColor);
   border: 1px solid #333;
 }

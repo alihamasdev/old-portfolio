@@ -11,6 +11,9 @@
   text-decoration: none;
   color: white;
 }
+:root {
+  --yellowColor: #f7a707;
+}
 
 #time-container {
   user-select: none;
@@ -19,9 +22,7 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-input::placeholder {
-  color: rgb(255, 255, 255, 0.7);
-}
+input::placeholder,
 textarea::placeholder {
   color: rgb(255, 255, 255, 0.7);
 }
@@ -63,7 +64,7 @@ input[type="checkbox"] {
 }
 
 input:checked + .slider {
-  background-color: #f4bd50;
+  background-color: #f7a707;
 }
 
 input:checked + .slider:before {
@@ -103,13 +104,15 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  box-shadow: -340px 0 0 332px #f7a707, inset 0 0 0 3px #f7a707;
+  box-shadow: -340px 0 0 332px var(--yellowColor),
+    inset 0 0 0 3px var(--yellowColor);
   transition: all 0.2s ease-in-out;
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
   background: #fff;
-  box-shadow: -340px 0 0 332px #f7a707, inset 0 0 0 3px #f7a707;
+  box-shadow: -340px 0 0 332px var(--yellowColor),
+    inset 0 0 0 3px var(--yellowColor);
 }
 
 /* Custom Radio Button */
