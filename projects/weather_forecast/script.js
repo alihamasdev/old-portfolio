@@ -43,17 +43,17 @@ searchForm.addEventListener("submit", function (event) {
             data.wind.speed + "Km/h";
           let id = data.weather[0].id;
           if (id == 800) {
-            weatherIcon.src = "/Images/bright.png";
+            weatherIcon.src = "Images/bright.png";
           } else if (id >= 200 && id <= 232) {
-            weatherIcon.src = "/Images/dizzle.png";
+            weatherIcon.src = "Images/dizzle.png";
           } else if (id >= 600 && id <= 622) {
-            weatherIcon.src = "/Images/snow.png";
+            weatherIcon.src = "Images/snow.png";
           } else if (id >= 701 && id <= 781) {
-            weatherIcon.src = "/Images/mist.png";
+            weatherIcon.src = "Images/mist.png";
           } else if (id >= 801 && id <= 804) {
-            weatherIcon.src = "/Images/cloudy.png";
+            weatherIcon.src = "Images/cloudy.png";
           } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
-            weatherIcon.src = "/Images/rain.png";
+            weatherIcon.src = "Images/rain.png";
           }
           console.log(data.sys.country);
           showResult();
