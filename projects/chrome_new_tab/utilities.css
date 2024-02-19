@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+#time-container {
+  user-select: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255, 0.7);
+}
+textarea::placeholder {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+/* Custom CheckBox */
+input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 15px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #949494;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f4bd50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(13px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Custom Input Range */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  width: 230px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ddd;
+  height: 15px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0px;
+  background-color: #f7a70a;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  box-shadow: -340px 0 0 332px #f7a707, inset 0 0 0 3px #f7a707;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background: #fff;
+  box-shadow: -340px 0 0 332px #f7a707, inset 0 0 0 3px #f7a707;
+}
+
+/* Custom Radio Button */
+input[type="radio"] {
+  display: none;
+}

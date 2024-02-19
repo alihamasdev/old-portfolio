@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/Images/favicon.svg" type="image/x-icon" />
+    <title>New Tab</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utilities.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <!-- Time Container -->
+      <div id="time-container">
+        <span id="hour">12</span>
+        <span id="dots">:</span>
+        <span id="min">00</span>
+        <span id="zone"></span>
+      </div>
+      <!-- Message Container -->
+      <div id="msg-container">
+        <h1><span id="dayTime"></span><span id="name">Ali Hamas</span></h1>
+      </div>
+      <!-- Search Container -->
+      <div id="search-container">
+        <form id="search-form" autocomplete="off">
+          <label for="search-input">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/281/281764.png"
+              id="google-logo"
+              width="20px"
+            />
+            <img
+              src="https://infinity-permanent.infinitynewtab.com/infinity/search-add/bing_new.png?imageMogr2/thumbnail/240x/format/webp/blur/1x0/quality/100|imageslim"
+              id="bing-logo"
+              width="30px"
+            />
+          </label>
+          <input
+            type="search"
+            id="search-input"
+            minlength="1"
+            placeholder="Search"
+          />
+        </form>
+      </div>
+      <!-- Shortcut Container -->
+      <div id="shortcut-container">
+        <a href="https://web.whatsapp.com/" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png"
+            />
+          </div>
+          <div class="shortcut-title">
+            WhatsApp <i class="fa-brands fa-twitter"></i>
+          </div>
+        </a>
+        <a href="https://youtube.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://s2.googleusercontent.com/s2/favicons?domain=https://youtube.com&sz=256"
+            />
+          </div>
+          <div class="shortcut-title">YouTube</div>
+        </a>
+        <a href="https://twitter.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" />
+          </div>
+          <div class="shortcut-title">Twitter</div>
+        </a>
+        <a href="https://instagram.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://s2.googleusercontent.com/s2/favicons?domain=https://instagram.com&sz=256"
+            />
+          </div>
+          <div class="shortcut-title">Instagram</div>
+        </a>
+        <a href="https://facebook.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png"
+            />
+          </div>
+          <div class="shortcut-title">Facebook</div>
+        </a>
+        <a href="https://linkedin.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" />
+          </div>
+          <div class="shortcut-title">LinkedIn</div>
+        </a>
+        <a href="https://github.com" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2111/2111425.png"
+            />
+          </div>
+          <div class="shortcut-title">GitHub</div>
+        </a>
+        <a href="https://chat.openai.com/" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/11865/11865326.png"
+            />
+          </div>
+          <div class="shortcut-title">Chat GPT</div>
+        </a>
+        <a href="https://mail.google.com/" class="shortcut" draggable="true">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png"
+            />
+          </div>
+          <div class="shortcut-title">Gmail</div>
+        </a>
+        <a id="new-shortcut">
+          <div class="shortcut-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"
+            />
+          </div>
+          <div class="shortcut-title">Add shortcut</div>
+        </a>
+      </div>
+      <!-- Add Shortcut Form -->
+      <div id="add-shortcut-box">
+        <div class="add-shortcut-box-inner">
+          <img
+            class="close-add-shortcut-box"
+            src="https://cdn-icons-png.flaticon.com/128/9684/9684650.png"
+            width="15px"
+          />
+          <h2 class="add-shortcut-title">Add Shortcut</h2>
+          <div class="shortcut-icon">
+            <img
+              id="preview-img"
+              src="https://cdn-icons-png.flaticon.com/128/1006/1006771.png"
+            />
+          </div>
+          <form class="add-shortcut-form" autocomplete="off">
+            <div class="input-field">
+              <input
+                type="text"
+                minlength="1"
+                class="shortcut-form-fields"
+                id="form-name-input"
+                required
+              />
+              <label for="form-name-input" class="placeholder-text">Name</label>
+            </div>
+            <div class="input-field">
+              <input
+                type="text"
+                minlength="1"
+                class="shortcut-form-fields"
+                id="form-url-input"
+                required
+              />
+              <label for="form-url-input" class="placeholder-text">URL</label>
+              <span class="http-error"
+                >Please enter a URL starting with https://</span
+              >
+            </div>
+            <button type="submit" id="done-shortcut-btn" disabled>Done</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------  Tasks  ---------------------------------------->
+    <div class="open-tasks">
+      <div class="tasks-img">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/9809/9809689.png"
+          width="30px"
+        />
+      </div>
+      <div class="app-title">Tasks</div>
+    </div>
+
+    <!-- Tasks -->
+    <div class="tasks-pane">
+      <div class="tasks-pane-inner">
+        <div class="tasks-box">
+          <h1 class="app-heading">Tasks</h1>
+          <form class="add-task-form" autocomplete="off">
+            <input
+              type="text"
+              class="task-input"
+              placeholder="Add your task"
+              required
+            />
+            <button type="submit">ADD</button>
+          </form>
+          <div class="added-tasks">
+            <!-- <div class="task">
+              <input type="checkbox" id="task-checkbox" class="task-checkbox" />
+              <label for="task-checkbox">&#10003; </label>
+              <p class="task-text">Added task shown here</p>
+              <p class="delete-task">&#10005;</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------  Notes  ---------------------------------------->
+    <div class="open-notes">
+      <div class="notes-img">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/3387/3387271.png"
+          width="30px"
+        />
+      </div>
+      <div class="app-title">Notes</div>
+    </div>
+
+    <!-- Notes -->
+    <div class="notes-pane">
+      <div class="notes-pane-inner">
+        <div class="notes-box-one">
+          <h1 class="app-heading">Add New Note</h1>
+          <form class="notes-form">
+            <input
+              type="text"
+              class="notes-title-input"
+              placeholder="Title"
+              required
+            />
+            <textarea
+              class="notes-desc-input"
+              placeholder="Description"
+              rows="2"
+              required
+            ></textarea>
+            <button type="submit" class="notes-form-submit" disabled>
+              Add Note
+            </button>
+          </form>
+        </div>
+        <div class="added-notes-div">
+          <!-- Added Note -->
+          <!-- <div class="notes-box">
+            <div class="added-note-title">Added Note Title 1</div>
+            <div class="added-note-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit
+            </div>
+            <div class="note-delete">&#10005;</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------  Setting  ---------------------------------------->
+    <div id="open-setting">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24px"
+        height="24px"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"
+        />
+      </svg>
+    </div>
+    <div id="setting-box">
+      <div class="setting-inner">
+        <!-- ---------------------------Wallpaper Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">Wallpaper</h2>
+          <!-- Dim Wallpaper -->
+          <div class="setting-tile setting-tile-withHeading">
+            <h3 class="setting-tile-heading">Dim the Wallpaper</h3>
+            <div class="setting-tile-content">
+              <input
+                type="range"
+                id="dim-range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.3"
+              />
+              <div id="dim-value">30%</div>
+            </div>
+          </div>
+          <!-- Blur Wallpaper -->
+          <div class="setting-tile setting-tile-withHeading">
+            <h3 class="setting-tile-heading">Blur the Wallpaper</h3>
+            <div class="setting-tile-content">
+              <input
+                type="range"
+                id="blur-range"
+                min="0"
+                max="20"
+                step=".2"
+                value="0"
+              />
+              <div id="blur-value">0%</div>
+            </div>
+          </div>
+        </div>
+        <!-- ---------------------------Clock Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">Clock</h2>
+          <!-- Clock Display -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Time</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="time-checkbox" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Hour Format -->
+          <div class="setting-tile" id="hour-format-settingTile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Time Format</h3>
+              <div class="setting-radio">
+                <input
+                  type="radio"
+                  name="hour-format"
+                  class="hour-format-radio"
+                  id="radio-12hr"
+                  checked
+                />
+                <label for="radio-12hr">12 Hr</label>
+                <input
+                  type="radio"
+                  name="hour-format"
+                  class="hour-format-radio"
+                  id="radio-24hr"
+                />
+                <label for="radio-24hr">24 Hr</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ---------------------------Message Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">Message</h2>
+          <!-- Message Visibility -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Message</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="msg-checkbox" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Message Form -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Name</h3>
+              <div class="name-input-div">
+                <input
+                  type="text"
+                  id="name-input"
+                  minlength="1"
+                  maxlength="12"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ---------------------------Search Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">Search</h2>
+          <!-- Search Visibility -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Search Bar</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="search-checkbox" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Search in New Tab -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Open search in new tab</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="newTab-search-checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Search Engine -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Search Engine</h3>
+              <div class="setting-radio">
+                <input
+                  type="radio"
+                  name="search-engine"
+                  class="search-engine-radio"
+                  id="google-radio"
+                  checked
+                />
+                <label for="google-radio">Google</label>
+                <input
+                  type="radio"
+                  name="search-engine"
+                  class="search-engine-radio"
+                  id="bing-radio"
+                />
+                <label for="bing-radio">Bing</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ---------------------------Shotcut Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">Shortcuts</h2>
+          <!-- Shortcut visibility -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Shortcuts</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="shortcut-checkbox" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Open in New Tab -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Open shortcuts in new tab</h3>
+              <div class="setting-checkbox">
+                <label class="switch">
+                  <input type="checkbox" id="newTab-checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Icon Corners -->
+          <div class="setting-tile setting-tile-withHeading">
+            <h3 class="setting-tile-heading">Icon Corners</h3>
+            <div class="setting-tile-content">
+              <input
+                type="range"
+                id="icon-range"
+                min="0"
+                max="50"
+                step="1"
+                value="50"
+              />
+              <div id="icon-value">50%</div>
+            </div>
+          </div>
+          <!-- Shortcut Layout -->
+          <div class="setting-tile setting-tile-withHeading">
+            <h3 class="setting-tile-heading">Layout</h3>
+            <div class="shortcut-layout-setting">
+              <input
+                type="radio"
+                name="layout"
+                value="4x2"
+                id="radio-4x2"
+                class="layout-radios"
+              />
+              <label for="radio-4x2" class="layout-labels">4 x 2</label>
+              <input
+                type="radio"
+                name="layout"
+                value="5x2"
+                id="radio-5x2"
+                class="layout-radios"
+                checked
+              />
+              <label for="radio-5x2" class="layout-labels">5 x 2</label>
+              <input
+                type="radio"
+                name="layout"
+                value="6x2"
+                id="radio-6x2"
+                class="layout-radios"
+              />
+              <label for="radio-6x2" class="layout-labels">6 x 2</label>
+              <input
+                type="radio"
+                name="layout"
+                value="4x3"
+                id="radio-4x3"
+                class="layout-radios"
+              />
+              <label for="radio-4x3" class="layout-labels">4 x 3</label>
+              <input
+                type="radio"
+                name="layout"
+                value="5x3"
+                id="radio-5x3"
+                class="layout-radios"
+              />
+              <label for="radio-5x3" class="layout-labels">5 x 3</label>
+              <input
+                type="radio"
+                name="layout"
+                value="6x3"
+                id="radio-6x3"
+                class="layout-radios"
+              />
+              <label for="radio-6x3" class="layout-labels">6 x 3</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------------------------General Setting Section--------------------------- -->
+        <div class="setting-section">
+          <h2 class="setting-sec-heading">General Settings</h2>
+          <!-- Reset Settings -->
+          <div class="setting-tile">
+            <div class="setting-tile-content">
+              <h3 class="setting-tile-heading">Restore to Default</h3>
+              <div class="setting-reset">
+                <button id="reset-setting-btn">Reset</button>
+                <div id="sure-reset">
+                  Are you sure you want to reset settings to default values?
+                  <div class="confirmation-btns">
+                    <button id="cancel-btn">Cancel</button>
+                    <button id="ok-btn">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="/DOM script.js"></script>
+    <script src="/notes & tasks.js"></script>
+  </body>
+</html>
