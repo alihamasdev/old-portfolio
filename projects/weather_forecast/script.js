@@ -81,8 +81,7 @@ function currentLocation() {
             document.querySelector(".weather-type").innerHTML =
               data.weather[0].main;
             document.querySelector(".tempratue").innerHTML = tempratue;
-            // document.querySelector(".city-name-text").innerHTML = data.name;
-            document.querySelector(".city-name-text").innerHTML = info.name;
+            document.querySelector(".city-name-text").innerHTML = data.name;
             document.querySelector(".humidity-text").innerHTML =
               data.main.humidity + "%";
             document.querySelector(".wind-text").innerHTML =
