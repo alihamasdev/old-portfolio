@@ -1,0 +1,171 @@
+/* <--------------------------------- utility classes ---------------------------------> */
+section {
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.sec-content {
+  flex-direction: column;
+}
+
+.sec-heading {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.sec-heading h1 {
+  font-size: 1.5rem; 
+}
+
+.secondry-heading {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.secondry-heading h1 {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 10px;
+  border: 1px solid var(--primaryColor);
+  margin-right: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* <--------------------------------- mobile.css ---------------------------------> */
+header {
+  width: 100vw;
+  height: 10vh;
+  font-size: 1.25rem;
+  background-color: var(--secondryBackground);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  position: fixed;
+  top: 0;
+}
+
+.header-left span#logo-title {
+  font-size: 1.25rem;
+}
+
+nav i.fa-bars {
+  display: inline;
+}
+
+ul li {
+  display: none;
+}
+
+/* main-sec */
+#main-sec {
+  width: 100vw;
+  height: 90vh;
+  margin-top: 10vh !important;
+}
+
+#main-sec .main-sec-content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.left-main-sec {
+  width: 100%;
+}
+
+.left-main-sec .hello-text {
+  font-size: 0.75rem;
+}
+
+.left-main-sec .name-text {
+  font-size: 1.15rem;
+}
+
+.right-main-sec {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-main-sec img {
+  width: 200px;
+}
+
+/* About section */
+.about-sec-content {
+  gap: 40px;
+}
+
+.about-sec-content .left-about-sec {
+  width: 100%;
+}
+
+.left-about-sec img {
+  width: 270px;
+}
+
+.about-sec-content .right-about-sec {
+  width: 100%;
+}
+
+/* Skills Section */
+
+/* Projects */
+
+/* Testimonial Section */
+#testimonial .testimonial-sec-content {
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.testimonial:first-child {
+  display: none;
+}
+
+/* Contact Section */
+.contact-sec-content .left-contact-sec {
+  width: 100%;
+}
+
+.contact-sec-content .right-contact-sec {
+  width: 100%;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+form textarea {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+/* Footer */
+footer .footer-content {
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.social-links i {
+  background-color: var(--primaryColor);
+}
