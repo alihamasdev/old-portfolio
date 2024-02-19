@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bbc6fb;
+}
+.container {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .container {
+    width: 80%;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+h1.main-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h1.main-heading::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 40%;
+  height: 3px;
+  width: 75px;
+  border-radius: 999px;
+  background-color: #05aaf5;
+}
+.container .qoute {
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.qoute::after,
+.qoute::before {
+  content: '"';
+}
+.container .author {
+  font-size: 16px;
+  position: relative;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+.container .author::before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  background-color: #05aaf5;
+  width: 30px;
+  height: 2px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.buttons button {
+  width: 140px;
+  font-size: 17px;
+  padding: 10px 0;
+  border: 1px solid #05aaf5;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons button i {
+  font-size: 18px;
+  margin-right: 4px;
+}
+.buttons .new-qoute {
+  background-color: #05aaf5;
+  color: #fff;
+}
+.buttons .tweet {
+  background-color: #fff;
+  color: #05aaf5;
+}

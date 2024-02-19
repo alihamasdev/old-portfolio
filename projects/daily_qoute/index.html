@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Qoute | Ali Hamas</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src=" https://kit.fontawesome.com/4c582ec221.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="http://alihamas.com/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-heading">Qoute of the Day</h1>
+      <blockquote class="qoute">Loading....</blockquote>
+      <div class="author">Loading....</div>
+      <div class="buttons">
+        <button class="new-qoute" onclick="getQoute(api_url)">New Qoute</button>
+        <button class="tweet" onclick="tweet()">
+          <i class="fa-brands fa-twitter"></i> Tweet
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let api_url = "https://api.quotable.io/random";
+      async function getQoute(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        document.querySelector(".qoute").innerHTML = data.content;
+        document.querySelector(".author").innerHTML = data.author;
+      }
+      getQoute(api_url);
+
+      function tweet() {
+        let tweet =
+          "https://twitter.com/intent/tweet?text=" +
+          encodeURIComponent(
+            `"${document.querySelector(".qoute").innerHTML}"\n\n-- ${
+              document.querySelector(".author").innerHTML
+            }`
+          );
+
+        window.open(tweet, "_blank");
+      }
+    </script>
+  </body>
+</html>
