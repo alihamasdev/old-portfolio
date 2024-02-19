@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter</title>
+    <link rel="stylesheet" href="utilities.css" />
+    <script
+      src=" https://kit.fontawesome.com/4c582ec221.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#index-left-sec").load("index-left-sec.html");
+        $("#index-center-sec").load("index-center-sec.html");
+        $("#index-right-sec").load("index-right-sec.html");
+      });
+    </script>
+    <style>
+      .container {
+        width: 100%;
+        display: flex;
+      }
+
+      .container .left-section {
+        width: 25%;
+        height: 100vh;
+        position: sticky;
+        left: 0;
+      }
+
+      .container .center-section {
+        width: 600px;
+        border-left: var(--border);
+        border-right: var(--border);
+        height: 500vh;
+      }
+
+      .container .right-section {
+        width: 33%;
+        height: auto;
+        position: sticky;
+        right: 0;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="left-section">
+        <div id="index-left-sec"></div>
+      </section>
+      <section class="center-section">
+        <div id="index-center-sec"></div>
+      </section>
+      <section class="right-section">
+        <div id="index-right-sec"></div>
+      </section>
+    </div>
+  </body>
+</html>

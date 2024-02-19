@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter</title>
+    <link rel="stylesheet" href="utilities.css" />
+    <style>
+      .tweet-content {
+        width: 100%;
+        padding: 12px 16px;
+        display: flex;
+        gap: 10px;
+        border-bottom: 1px solid #2f3336;
+      }
+
+      .tweet-content .tweet-inner {
+        width: 100%;
+      }
+
+      .tweet-inner .upper-line {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .upper-line .tweet-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--textColor);
+      }
+
+      .upper-line i {
+        color: var(--blueColor);
+      }
+
+      .upper-line .tweet-username {
+        font-size: 16px;
+        font-weight: 300;
+        color: #71767b;
+      }
+
+      .bottom-line {
+        font-size: 14px;
+      }
+
+      .tweet-icons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+
+      .tweet-icons i {
+        font-size: 16px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px !important;
+        border-radius: 50%;
+        transition: 0.3s ease;
+        color: #71767b;
+      }
+
+      .tweet-icons span {
+        transition: 0.3s ease;
+        color: #71767b;
+        font-size: 13px;
+      }
+
+      .tweet-icons .iconn {
+        cursor: pointer;
+      }
+
+      /* colors */
+      .iconn1:hover i,
+      .iconn1:hover .num1 {
+        color: #1d9bf0;
+      }
+
+      .iconn2:hover i,
+      .iconn2:hover #num2 {
+        color: #00ba7c;
+      }
+
+      .iconn3:hover i,
+      .iconn3:hover #num3 {
+        color: #f91880;
+      }
+
+      /* backgrounds */
+      .iconn1:hover i {
+        background-color: rgba(30, 157, 241, 0.2);
+      }
+
+      .iconn2:hover i {
+        background-color: rgba(0, 184, 123, 0.2);
+      }
+
+      .iconn3:hover i {
+        background-color: rgba(249, 26, 130, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tweet-content">
+      <img src="/Images/profile.png" alt="profile" class="profile-img" />
+      <div class="tweet-inner">
+        <div class="upper-line">
+          <p class="tweet-title">Ali Hamas</p>
+          <i class="fa-solid fa-circle-check"></i>
+          <p class="tweet-username">@ali_hamas . 2h</p>
+        </div>
+        <div class="bottom-line">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
+          odit sint maiores quos magni, asperiores nesciunt quibusdam, laborum
+          nisi dolores iusto quis quam nihil debitis omnis excepturi ipsa,
+          aliquid quidem. Sequi omnis aut quas.
+        </div>
+        <div class="tweet-icons">
+          <div class="iconn iconn1">
+            <i class="fa-regular fa-comment"></i>
+            <span class="num1" id="num1">2k</span>
+          </div>
+          <div class="iconn iconn2" onclick="retweet()">
+            <i class="fa-solid fa-retweet" id="retweet"></i>
+            <span class="num2" id="num2">2</span>
+          </div>
+          <div class="iconn iconn3" onclick="like()">
+            <i class="fa-regular fa-heart" id="like"></i>
+            <span class="num3" id="num3">2</span>
+          </div>
+          <div class="iconn iconn1">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span class="num1">2k</span>
+          </div>
+          <div class="iconn iconn1" onclick="bookmark()">
+            <i class="fa-regular fa-bookmark" id="bookmark"></i>
+          </div>
+          <div class="iconn iconn1">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let retweetIcon = document.getElementById("retweet"),
+        retweetCount = document.getElementById("num2"),
+        isRetweet = false,
+        retweetAdd = parseInt(retweetCount.innerHTML);
+      function retweet() {
+        isRetweet = !isRetweet;
+        if (isRetweet) {
+          retweetIcon.style.color = "#00ba7c";
+          retweetCount.style.color = "#00ba7c";
+          retweetAdd++;
+          retweetCount.innerHTML = retweetAdd;
+        } else {
+          retweetIcon.style.color = "#71767b";
+          retweetCount.style.color = "#71767b";
+          retweetAdd--;
+          retweetCount.innerHTML = retweetAdd;
+        }
+      }
+    </script>
+    <script>
+      let likeIcon = document.getElementById("like"),
+        likeCount = document.getElementById("num3"),
+        isLike = false,
+        likeAdd = parseInt(retweetCount.innerHTML);
+      function like() {
+        isLike = !isLike;
+        if (isLike) {
+          likeIcon.classList.replace("fa-regular", "fa-solid");
+          likeIcon.style.color = "#f91880";
+          likeCount.style.color = "#f91880";
+          likeAdd++;
+          likeCount.innerHTML = likeAdd;
+        } else {
+          likeIcon.classList.replace("fa-solid", "fa-regular");
+          likeIcon.style.color = "#71767b";
+          likeCount.style.color = "#71767b";
+          likeAdd--;
+          likeCount.innerHTML = likeAdd;
+        }
+      }
+    </script>
+    <script>
+      let bookmarkIcon = document.getElementById("bookmark");
+      let isBookmarked = false;
+      function bookmark() {
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.classList.replace("fa-regular", "fa-solid");
+          bookmarkIcon.style.color = "#1d9bf0";
+        } else {
+          bookmarkIcon.classList.replace("fa-solid", "fa-regular");
+          bookmarkIcon.style.color = "#71767b";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+<head>
+  <style>
+    .navbar {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    .navbar nav {
+      width: 270px;
+      position: absolute;
+      right: 0;
+    }
+
+    nav .logo {
+      margin-top: 5px;
+    }
+
+    .logo i {
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .logo i:hover {
+      background-color: var(--hoverColor);
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    li {
+      cursor: pointer;
+    }
+
+    li:hover .nav-item {
+      background-color: var(--hoverColor);
+    }
+
+    .nav-item {
+      padding: 12px 15px;
+      display: inline-flex;
+      gap: 20px;
+      align-items: center;
+      color: var(--textColor);
+      transition: 0.2s ease;
+      border-radius: 9999px;
+    }
+
+    .nav-item i,
+    #more-box i {
+      font-size: 24px;
+    }
+
+    p.nav-name {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    #more-button {
+      position: relative;
+    }
+
+    /* more box */
+    #more-box {
+      display: none;
+      width: 330px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 58px;
+      background-color: var(--primaryBackground);
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+        rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+      overflow: hidden;
+    }
+
+    #more-box .more-list {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 16px;
+      gap: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .more-list:hover {
+      background-color: var(--hoverColor);
+    }
+
+    .more-list:nth-child(2) {
+      border-bottom: var(--border);
+    }
+
+    .more-list .more-list-name {
+      font-size: 16px;
+    }
+
+    .more-list:nth-child(3) i,
+    .more-list:nth-child(4) i,
+    .more-list:nth-child(5) i {
+      font-size: 18px !important;
+      position: absolute;
+      right: 30px;
+    }
+
+    /* Post button */
+    button.blue-btn {
+      width: 220px;
+      height: 50px;
+      margin-top: 5px;
+      font-size: 18px !important;
+    }
+
+    /* Account Button */
+    #account {
+      bottom: 10px;
+    }
+
+    #account .account-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 60px;
+      width: 100%;
+      padding: 10px 12px;
+      margin-right: 10px;
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .account-inner:hover {
+      background-color: var(--hoverColor);
+    }
+
+    .account-info .acc-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .account-info .acc-username {
+      font-size: 14px;
+      color: var(--secondryText);
+      line-height: 14px;
+    }
+
+    .account-inner i {
+      font-size: 18px;
+      position: absolute;
+      right: 20px;
+    }
+
+    /* Account more */
+    #account-more {
+      width: 330px;
+      padding: 10px 0;
+      border-radius: 10px;
+      background-color: var(--primaryBackground);
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+        rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+      position: absolute;
+      bottom: 70px;
+      left: 0;
+      display: none;
+    }
+
+    #account-more .acc-more {
+      padding: 12px 16px;
+      font-size: 16px;
+    }
+
+    .acc-more:hover {
+      background-color: var(--hoverColor);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <nav>
+      <!-- logo -->
+      <div class="logo">
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
+      <ul>
+        <!-- Nav list -->
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-solid fa-house"></i>
+            <p class="nav-name">Home</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-solid fa-magnifying-glass"></i>
+            <p class="nav-name">Explore</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-regular fa-bell"></i>
+            <p class="nav-name">Notification</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-regular fa-envelope"></i>
+            <p class="nav-name">Messages</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-solid fa-list-ul"></i>
+            <p class="nav-name">Lists</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-solid fa-user-group"></i>
+            <p class="nav-name">Communities</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-brands fa-x-twitter"></i>
+            <p class="nav-name">Premium</p>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item">
+            <i class="nav-icons fa-regular fa-user"></i>
+            <p class="nav-name">Profile</p>
+          </div>
+        </li>
+        <li onclick="showMore()">
+          <div class="nav-item" id="more-btn">
+            <i class="nav-icons fa-solid fa-ellipsis"></i>
+            <p class="nav-name">More</p>
+          </div>
+        </li>
+      </ul>
+      <!-- More button click -->
+      <div id="more-box">
+        <div class="more-list">
+          <i class="fa-regular fa-bookmark"></i>
+          <p class="nav-name">Bookmark</p>
+        </div>
+        <div class="more-list">
+          <i class="fa-solid fa-money-bill"></i>
+          <p class="nav-name">Monetization</p>
+        </div>
+        <div class="more-list">
+          <p class="more-list-name">Creator Studio</p>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div class="more-list">
+          <p class="more-list-name">Professional Tools</p>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div class="more-list">
+          <p class="more-list-name">Setting and Support</p>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+      </div>
+
+      <!-- Post Button -->
+      <button class="blue-btn" id="post-btn">Post</button>
+    </nav>
+
+    <!-- Account -->
+    <nav id="account" onclick="showAccount()">
+      <div class="account-inner">
+        <div class="account-img">
+          <img src="/Images/profile.png" class="profile-img" />
+        </div>
+        <div class="account-info">
+          <div class="acc-name">Ali Hamas</div>
+          <div class="acc-username">@ali_hamas</div>
+        </div>
+        <i class="fa-solid fa-ellipsis"></i>
+        <!-- Account more -->
+        <div id="account-more">
+          <div class="acc-more">Add an existing account</div>
+          <div class="acc-more">Log out @ali_hamas</div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    let moreBtn = document.getElementById("more-btn"),
+      moreBox = document.getElementById("more-box");
+    let accountBtn = document.getElementById("account"),
+      accountMore = document.getElementById("account-more");
+    function showMore() {
+      moreBox.style.display = "block";
+    }
+    function showAccount() {
+      accountMore.style.display = "block";
+    }
+  </script>
+</body>

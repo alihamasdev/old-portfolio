@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    background-color: var(--primaryBackground);
+    color: var(--textColor);
+}
+
+::selection {
+    background-color: var(--blueHover);
+}
+
+:root {
+    --primaryBackground: #000000;
+    --secondryBackground: #16181c;
+    --hoverColor: #181818;
+    --textColor: #e7e9ea;
+    --secondryText: #71767b;
+    --blueColor: #1d9bf0;
+    --blueHover: #1B8CD8;
+    --borderColor: #2f3336;
+    --border: 1px solid #2f3336;
+}
+
+button a {
+    color: var(--textColor);
+}
+
+img.profile-img {
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+button.blue-btn {
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 9999px;
+    color: var(--textColor);
+    background-color: var(--blueColor);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+    transition: .3s ease;
+}
+
+button.blue-btn:hover {
+    background-color: var(--blueHover);
+}

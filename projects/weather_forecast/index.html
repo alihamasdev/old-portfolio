@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="/Images/bright.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src=" https://kit.fontawesome.com/4c582ec221.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container first-container">
+      <div class="heading-div">
+        <h1 class="main-heading">Weather Finder</h1>
+      </div>
+      <div class="container-inner">
+        <div class="status-div"></div>
+        <form class="weather-search" autocomplete="off">
+          <input
+            type="text"
+            class="search"
+            placeholder="Enter city name"
+            spellcheck="false"
+          />
+          <span class="empty-search-text">Please enter a city name</span>
+        </form>
+        <div class="or-div">
+          <div class="or-line"></div>
+          <div class="or-text">or</div>
+          <div class="or-line"></div>
+        </div>
+        <div class="user-location">
+          <button class="location-btn" onclick="currentLocation()">
+            Current Location
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container result-container">
+      <div class="heading-div">
+        <i class="fa-solid fa-circle-chevron-left" onclick="backToHome()"></i>
+        <h1 class="main-heading">Weather Finder</h1>
+      </div>
+      <div class="container-inner">
+        <div class="weather-detail">
+          <div class="weather-images">
+            <img src="/Images/bright.png" class="weather-icon" alt="bright" />
+          </div>
+          <div class="tempratue">28<span class="degree">°</span>C</div>
+          <div class="weather-type">broken clouds</div>
+          <div class="city-name">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="city-name-text">lahore</div>
+          </div>
+        </div>
+      </div>
+      <div class="other-weather-details">
+        <div class="humidity-box">
+          <div class="humidity-img">
+            <img src="/Images/humidity.png" alt="" width="40px" />
+          </div>
+          <div class="humidity">
+            <div class="humidity-text">64%</div>
+            <div class="humidity-heading">Humidity</div>
+          </div>
+        </div>
+        <div class="wind-box">
+          <div class="wind-img">
+            <img src="/Images/wind.png" alt="" width="45px" />
+          </div>
+          <div class="wind">
+            <div class="wind-text">18Km/h</div>
+            <div class="wind-heading">Wind</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="weather-detail">
+      <div class="humidity"></div>
+      <div class=""></div>
+    </div> -->
+    <script src="/script.js"></script>
+  </body>
+</html>
