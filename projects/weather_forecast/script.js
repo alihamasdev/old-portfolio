@@ -77,6 +77,7 @@ function currentLocation() {
           .then((data) => {
             let temp = Math.round(data.main.temp);
             let tempratue = `${temp}<span class="degree">°</span>C`;
+            let weatherIcon = document.querySelector(".weather-icon");
             document.querySelector(".weather-type").innerHTML =
               data.weather[0].main;
             document.querySelector(".tempratue").innerHTML = tempratue;
@@ -124,10 +125,3 @@ function backToHome() {
   searchInput.value = "";
   statusDiv.style.display = "none";
 }
-
-// fetch(
-//   `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&appid=db499ac39e76a04aacc125fd196e09be&units=metric`
-// )
-//   .then((response) => response.json())
-//   .then((data) => console.log(data))
-//   .catch((error) => console.error("error:", error));
