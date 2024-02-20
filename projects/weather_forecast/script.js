@@ -22,6 +22,7 @@ searchForm.addEventListener("submit", function (event) {
     statusDiv.innerHTML = "Getting weather details....";
     statusDiv.classList.add("status-pending");
     statusDiv.classList.remove("status-error");
+    statusDiv.style.display = "block";
     fetch(`${apiURL}&q=${searchInput.value}`)
       .then((response) => response.json())
       .then((data) => {
@@ -68,6 +69,7 @@ function currentLocation() {
     statusDiv.innerHTML = "Getting weather details....";
     statusDiv.classList.add("status-pending");
     statusDiv.classList.remove("status-error");
+    statusDiv.style.display = "block";
     navigator.geolocation.getCurrentPosition(
       (position) => {
         let currentLatitude = position.coords.latitude;
@@ -110,7 +112,7 @@ function currentLocation() {
       }
     );
   } else {
-    alert("Your browser not support geolocation api");
+    alert("Your browser not support geolocation");
   }
 }
 
@@ -120,8 +122,8 @@ function showResult() {
 }
 
 function backToHome() {
-  resultContainer.style.display = "none";
-  firstContainer.style.display = "block";
   searchInput.value = "";
   statusDiv.style.display = "none";
+  resultContainer.style.display = "none";
+  firstContainer.style.display = "block";
 }
