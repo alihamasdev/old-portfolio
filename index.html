@@ -278,15 +278,12 @@
                     <h1>DROP A LINE</h1>
                 </div>
                 <!-- contact form -->
-                <form action="https://formsubmit.co/alihamasghurki4@gmail.com" method="POST" autocomplete="off">
-                    <input type="text" id="f-name" placeholder="First Name" required>
-                    <input type="text" id="l-name" placeholder="Last Name" required>
-                    <input type="email" id="email" placeholder="Email" required>
+                <form class="contact-form" autocomplete="off">
+                    <input type="text" id="f-name" placeholder="First Name">
+                    <input type="text" id="l-name" placeholder="Last Name">
+                    <input type="email" id="email" placeholder="Email">
                     <input type="tel" id="phone" placeholder="Phone #">
-                    <textarea rows="4" id="message" placeholder="Message" required></textarea>
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://alihamas.com">
+                    <textarea rows="4" id="message" placeholder="Message"></textarea>
                     <button class="btn fill-btn" type="submit">Submit</button>
                 </form>
             </div>
@@ -306,8 +303,10 @@
                 <a href="https://twitter.com/AliHamasGh" target="_blank"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
-        <!-- <div id="first" style="text-align: center;"></div> -->
     </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/script.js"></script>
 
     <!-- Header Script -->
     <script>
