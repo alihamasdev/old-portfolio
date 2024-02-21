@@ -22,7 +22,14 @@ body {
 }
 @media screen and (max-width: 767px) {
   .container {
-    width: 80%;
+    width: 90%;
+  }
+  .details-img {
+    width: 30px;
+  }
+  .humidity-text,
+  .wind-text {
+    font-size: 14px;
   }
 }
 .container .heading-div {
