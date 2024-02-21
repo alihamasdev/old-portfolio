@@ -29,7 +29,7 @@ body {
   }
   .humidity-text,
   .wind-text {
-    font-size: 10px;
+    font-size: 14px !important;
   }
 }
 .container .heading-div {
