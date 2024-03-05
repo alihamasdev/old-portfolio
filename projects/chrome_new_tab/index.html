@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="../../images/favicon.png"
+      href="https://alihamas.vercel.app/images/favicon.png"
       type="image/x-icon"
     />
     <title>New Tab | Ali Hamas</title>
@@ -24,7 +24,10 @@
       </div>
       <!-- Message Container -->
       <div id="msg-container">
-        <h1><span id="dayTime"></span><span id="name">Ali Hamas</span></h1>
+        <h1>
+          <span id="dayTime">Good Morning, </span>
+          <span id="name">Ali Hamas</span>
+        </h1>
       </div>
       <!-- Search Container -->
       <div id="search-container">
@@ -46,6 +49,7 @@
             id="search-input"
             minlength="1"
             placeholder="Search"
+            required
           />
         </form>
       </div>
@@ -62,7 +66,7 @@
         <a href="https://youtube.com" class="shortcut" draggable="true">
           <div class="shortcut-icon">
             <img
-              src="https://s2.googleusercontent.com/s2/favicons?domain=https://youtube.com&sz=256"
+              src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png"
             />
           </div>
           <div class="shortcut-title">YouTube</div>
@@ -76,7 +80,7 @@
         <a href="https://instagram.com" class="shortcut" draggable="true">
           <div class="shortcut-icon">
             <img
-              src="https://s2.googleusercontent.com/s2/favicons?domain=https://instagram.com&sz=256"
+              src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png"
             />
           </div>
           <div class="shortcut-title">Instagram</div>
@@ -102,22 +106,6 @@
             />
           </div>
           <div class="shortcut-title">GitHub</div>
-        </a>
-        <a href="https://chat.openai.com/" class="shortcut" draggable="true">
-          <div class="shortcut-icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/11865/11865326.png"
-            />
-          </div>
-          <div class="shortcut-title">Chat GPT</div>
-        </a>
-        <a href="https://mail.google.com/" class="shortcut" draggable="true">
-          <div class="shortcut-icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png"
-            />
-          </div>
-          <div class="shortcut-title">Gmail</div>
         </a>
         <a id="new-shortcut">
           <div class="shortcut-icon">
@@ -171,20 +159,115 @@
           </form>
         </div>
       </div>
+      <!-- Right Side Buttons -->
+      <div class="right-side-btns">
+        <div class="right-btn open-tasks">
+          <div class="right-btn-img">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/9809/9809689.png"
+            />
+          </div>
+          <div class="right-btn-title">Tasks</div>
+        </div>
+        <div class="right-btn open-notes">
+          <div class="right-btn-img">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3387/3387271.png"
+            />
+          </div>
+          <div class="right-btn-title">Notes</div>
+        </div>
+        <a
+          href="https://alihamas.vercel.app/projects/qr_code_generator/"
+          class="right-btn"
+        >
+          <div class="right-btn-img">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/8721/8721150.png"
+              style="filter: invert(100%)"
+            />
+          </div>
+          <div class="right-btn-title">QR Code</div>
+        </a>
+        <a href="https://mail.google.com/" class="right-btn">
+          <div class="right-btn-img">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png"
+            />
+          </div>
+          <div class="right-btn-title">Gmail</div>
+        </a>
+        <a href="https://gemini.google.com/" class="right-btn">
+          <div class="right-btn-img">
+            <img
+              src="https://s2.googleusercontent.com/s2/favicons?domain=https://gemini.google.com/&sz=256"
+            />
+          </div>
+          <div class="right-btn-title">Gemini</div>
+        </a>
+        <a href="https://copilot.microsoft.com/" class="right-btn">
+          <div class="right-btn-img">
+            <img
+              src="https://s2.googleusercontent.com/s2/favicons?domain=https://copilot.microsoft.com/&sz=256"
+            />
+          </div>
+          <div class="right-btn-title">CoPilot</div>
+        </a>
+        <a href="https://chat.openai.com/" class="right-btn">
+          <div class="right-btn-img">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/11865/11865326.png"
+              style="filter: invert(100%)"
+            />
+          </div>
+          <div class="right-btn-title">Chat GPT</div>
+        </a>
+        <div class="right-bottom-div">
+          <!-- Network Status -->
+          <div class="network-div">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/11433/11433365.png"
+              class="network-img"
+            />
+          </div>
+          <!-- battery Status -->
+          <div class="battery-div">
+            <div class="battery-percentage"></div>
+            <div class="battery-boundry">
+              <div class="battery-inner"></div>
+            </div>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2682/2682835.png"
+              class="battery-charging"
+              width="22px"
+            />
+            <div class="battery-can"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Left Side Button -->
+      <div class="left-side-btns">
+        <!-- Weather -->
+        <div class="weather-div">
+          <div class="weather-details">
+            <a href="https://alihamas.vercel.app/projects/weather_forecast/">
+              <img class="weather-img" />
+            </a>
+            <div class="tempratue"></div>
+          </div>
+        </div>
+        <!-- Open Setting Btn -->
+        <div id="open-setting">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/503/503849.png"
+            width="25px"
+            class="setting-img"
+          />
+        </div>
+      </div>
     </div>
 
     <!----------------------------------------  Tasks  ---------------------------------------->
-    <div class="open-tasks">
-      <div class="tasks-img">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/9809/9809689.png"
-          width="30px"
-        />
-      </div>
-      <div class="app-title">Tasks</div>
-    </div>
-
-    <!-- Tasks -->
     <div class="tasks-pane">
       <div class="tasks-pane-inner">
         <div class="tasks-box">
@@ -199,29 +282,13 @@
             <button type="submit">ADD</button>
           </form>
           <div class="added-tasks">
-            <!-- <div class="task">
-              <input type="checkbox" id="task-checkbox" class="task-checkbox" />
-              <label for="task-checkbox">&#10003; </label>
-              <p class="task-text">Added task shown here</p>
-              <p class="delete-task">&#10005;</p>
-            </div> -->
+            <!-- Added Tasks -->
           </div>
         </div>
       </div>
     </div>
 
     <!----------------------------------------  Notes  ---------------------------------------->
-    <div class="open-notes">
-      <div class="notes-img">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/3387/3387271.png"
-          width="30px"
-        />
-      </div>
-      <div class="app-title">Notes</div>
-    </div>
-
-    <!-- Notes -->
     <div class="notes-pane">
       <div class="notes-pane-inner">
         <div class="notes-box-one">
@@ -245,31 +312,12 @@
           </form>
         </div>
         <div class="added-notes-div">
-          <!-- Added Note -->
-          <!-- <div class="notes-box">
-            <div class="added-note-title">Added Note Title 1</div>
-            <div class="added-note-desc">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit
-            </div>
-            <div class="note-delete">&#10005;</div>
-          </div> -->
+          <!-- Added Notes -->
         </div>
       </div>
     </div>
 
     <!----------------------------------------  Setting  ---------------------------------------->
-    <div id="open-setting">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"
-        />
-      </svg>
-    </div>
     <div id="setting-box">
       <div class="setting-inner">
         <!-- ---------------------------Wallpaper Setting Section--------------------------- -->
@@ -536,7 +584,7 @@
               <div class="setting-reset">
                 <button id="reset-setting-btn">Reset</button>
                 <div id="sure-reset">
-                  Are you sure you want to reset settings to default values?
+                  Are you sure you want to reset all Settings, Notes & Tasks?
                   <div class="confirmation-btns">
                     <button id="cancel-btn">Cancel</button>
                     <button id="ok-btn">OK</button>
@@ -548,7 +596,7 @@
         </div>
       </div>
     </div>
-
+    <script src="setting.js"></script>
     <script src="script.js"></script>
     <script src="DOM script.js"></script>
     <script src="notes & tasks.js"></script>

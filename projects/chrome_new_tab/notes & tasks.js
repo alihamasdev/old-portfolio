@@ -4,8 +4,6 @@ let notesPane = document.querySelector(".notes-pane");
 openNotesBtn.addEventListener("click", openNotesFunction);
 function openNotesFunction() {
   notesPane.style.width = "400px";
-  openNotesBtn.style.display = "none";
-  openTasksBtn.style.display = "none";
 }
 
 let openTasksBtn = document.querySelector(".open-tasks");
@@ -14,8 +12,6 @@ let tasksPane = document.querySelector(".tasks-pane");
 openTasksBtn.addEventListener("click", openTasksFunction);
 function openTasksFunction() {
   tasksPane.style.width = "400px";
-  openNotesBtn.style.display = "none";
-  openTasksBtn.style.display = "none";
 }
 
 // Add Task Form

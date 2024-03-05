@@ -9,7 +9,7 @@ body {
 
 #container {
   width: 100%;
-  height: 672px;
+  height: 675px;
   position: relative;
   background-color: rgb(0, 0, 0, 0.3);
   backdrop-filter: blur(0px);
@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Time Container */
@@ -76,10 +76,6 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-
-  ::placeholder {
-    color: rgb(255, 255, 255, 0.7);
-  }
 }
 
 #search-form label img {
@@ -119,7 +115,7 @@ body {
   cursor: pointer;
 }
 
-/* BookMarks */
+/* Shortcut Container */
 #shortcut-container {
   display: grid;
   grid-template: repeat(2, 100px) / repeat(5, 1fr);
@@ -165,6 +161,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* New Shortcut Button */
 #new-shortcut {
   height: 100px;
   gap: 8px;
@@ -217,7 +214,7 @@ body {
   user-select: none;
 }
 
-/* Add new Shortcut */
+/* Add New Shortcut Box */
 #add-shortcut-box {
   position: fixed;
   left: 50%;
@@ -347,48 +344,153 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Taks & Notes open buttons */
-.open-notes,
-.open-tasks {
+/* Right Side Buttons */
+.right-side-btns {
   position: fixed;
   top: 0px;
   right: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.right-side-btns .right-btn {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 10px 10px 10px 10px;
-  height: 60px;
-  width: 52px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 10px;
   cursor: pointer;
+  width: 52px;
   transition: all 0.3s ease;
-  z-index: 1;
 }
-
-.open-notes {
-  top: 60px;
+.right-btn:hover {
+  width: auto;
 }
-
-.open-notes:hover,
-.open-tasks:hover {
-  width: 115px;
-}
-
-.open-notes:hover .app-title,
-.open-tasks:hover .app-title {
-  width: 53px;
+.right-btn:hover .right-btn-title {
+  width: auto;
+  height: auto;
   margin-left: 10px;
 }
-
-.app-title {
-  width: 0px;
-  text-align: left;
+.right-btn .right-btn-img {
+  width: 30px;
+  height: 30px;
+}
+.right-btn .right-btn-img img {
+  height: 100%;
+}
+.right-btn .right-btn-title {
   font-weight: 600;
   font-size: 18px;
+  width: 0;
+  height: 0;
   overflow: hidden;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+.right-side-btns .right-bottom-div {
+  margin: auto 15px 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.network-div img.network-img {
+  width: 30px;
+}
+.right-bottom-div .battery-div {
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.battery-div .battery-boundry {
+  width: 40px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+}
+.battery-boundry .battery-inner {
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #16a34a;
+}
+.battery-charging {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translateY(-50%);
+  filter: invert(100%);
+  display: none;
+}
+.battery-div .battery-can {
+  width: 4px;
+  height: 8px;
+  background-color: #fff;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  top: 41%;
+  right: -3px;
+}
+.battery-div .battery-percentage {
+  margin-right: 10px;
+}
+
+/* Left Side Buttons */
+.left-side-btns {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* Weather */
+.left-side-btns .weather-div {
+  margin: 30px 0 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+.weather-div .weather-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  display: none;
+}
+.weather-details .weather-img {
+  width: 35px;
+}
+.weather-details .tempratue,
+.tempratue .temp-unit {
+  font-size: 30px;
+  font-weight: 600;
+}
+.tempratue .temp-unit {
+  position: relative;
+  margin-left: 2px;
+}
+.tempratue .degree {
+  position: absolute;
+  font-size: 20px;
+  left: -8px;
+  top: -1px;
+}
+/* Open Setting */
+.left-side-btns #open-setting {
+  margin: auto 0 30px 35px;
+  cursor: pointer;
+}
+#open-setting img.setting-img {
+  filter: invert(80%);
   transition: all 0.3s ease;
+}
+#open-setting img.setting-img:hover {
+  filter: invert(100%);
 }
 
 /* Tasks */
@@ -402,7 +504,6 @@ body {
   transition: all 0.3s ease;
   z-index: 2;
 }
-
 .tasks-pane-inner {
   width: 100%;
   height: 100%;
@@ -516,11 +617,12 @@ body {
   right: 0;
   top: 0;
   width: 0px;
-  height: 100vh;
+  height: auto;
   max-height: 100vh;
   background-color: transparent;
   transition: all 0.3s ease;
   z-index: 2;
+  overflow-y: auto;
 }
 .notes-pane-inner {
   width: 100%;
@@ -636,26 +738,6 @@ form.notes-form button {
   cursor: pointer;
   user-select: none;
 }
-
-/* Setting */
-#open-setting {
-  position: fixed;
-  bottom: 40px;
-  left: 40px;
-  cursor: pointer;
-}
-
-#open-setting svg {
-  fill: rgba(255, 255, 255, 0.8);
-  height: 24px;
-  width: 24px;
-  transition: all 0.3s ease;
-}
-
-#open-setting svg:hover {
-  fill: rgba(255, 255, 255);
-}
-
 /* Setting Box */
 #setting-box {
   width: 0px;
