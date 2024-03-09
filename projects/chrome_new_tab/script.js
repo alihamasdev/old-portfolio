@@ -1,15 +1,11 @@
 // Selecting Clock ID's
-let hourID = document.getElementById("hour"),
-  minID = document.getElementById("min"),
+let timeID = document.getElementById("time"),
   zoneID = document.getElementById("zone"),
-  dayID = document.getElementById("day"),
-  dateID = document.getElementById("date"),
-  monthID = document.getElementById("month"),
-  yearID = document.getElementById("year"),
   dayTimeID = document.getElementById("dayTime");
 
-setInterval(() => {
-  let a = new Date(),
+// Time Function
+function startTime() {
+    let a = new Date(),
     bHour = a.getHours(),
     hour = 0,
     bMin = a.getMinutes(),
@@ -21,8 +17,8 @@ setInterval(() => {
       bHour === 0
         ? (hour = 12)
         : bHour > 12
-        ? (hour = bHour - 12)
-        : (hour = bHour);
+          ? (hour = bHour - 12)
+          : (hour = bHour);
     } else {
       hour = bHour;
     }
@@ -68,9 +64,74 @@ setInterval(() => {
   adding0();
 
   // Printing Time
-  hourID.innerHTML = hour;
-  minID.innerHTML = min;
-}, 1000);
+  timeID.innerHTML = `${hour}:${min}`
+  setTimeout(startTime, 1000);
+}
+document.body.onload = startTime();
+
+
+// setInterval(() => {
+//   let a = new Date(),
+//     bHour = a.getHours(),
+//     hour = 0,
+//     bMin = a.getMinutes(),
+//     min = 0;
+
+//   //Hour format
+//   function hourFormat() {
+//     if (Radio12Hr.checked) {
+//       bHour === 0
+//         ? (hour = 12)
+//         : bHour > 12
+//           ? (hour = bHour - 12)
+//           : (hour = bHour);
+//     } else {
+//       hour = bHour;
+//     }
+//   }
+
+//   // Time Zone
+//   function timeZone() {
+//     if (Radio12Hr.checked === true) {
+//       if (bHour > 11) {
+//         zoneID.innerHTML = "PM";
+//       } else {
+//         zoneID.innerHTML = "AM";
+//       }
+//     } else if (Radio12Hr.checked === false) {
+//       zoneID.innerHTML = "";
+//     }
+//   }
+
+//   // Day Time
+//   function dayTime() {
+//     if (bHour >= 5 && bHour < 12) {
+//       dayTimeID.innerHTML = "Good Morning, ";
+//     } else if (bHour >= 12 && bHour < 16) {
+//       dayTimeID.innerHTML = "Good After Noon, ";
+//     } else if (bHour >= 16 && bHour < 21) {
+//       dayTimeID.innerHTML = "Good Evening, ";
+//     } else {
+//       dayTimeID.innerHTML = "Good Night, ";
+//     }
+//   }
+
+//   // Adding 0 to minutes
+//   function adding0() {
+//     bMin < 10 ? (min = `0${bMin}`) : (min = bMin);
+//     if (Radio24Hr.checked) {
+//       bHour < 10 ? (hour = `0${bHour}`) : (hour = bHour);
+//     }
+//   }
+
+//   hourFormat();
+//   timeZone();
+//   dayTime();
+//   adding0();
+
+//   // Printing Time
+//   timeID.innerHTML = `${hour}:${min}`
+// }, 1000);
 
 window.onclick = function (event) {
   // Close Setting on Outside Click
@@ -237,27 +298,29 @@ addShortcutForm.addEventListener("submit", function (event) {
 });
 
 // Battery Script
-setInterval(() => {
-  navigator.getBattery().then((battery) => {
-    let batteryLevel = Math.round(battery.level * 100);
-    let batteryInner = document.querySelector(".battery-inner");
-    document.querySelector(
-      ".battery-percentage"
-    ).innerHTML = `${batteryLevel}%`;
-    batteryInner.style.width = `${batteryLevel}%`;
-    battery.charging
-      ? (document.querySelector(".battery-charging").style.display = "block")
-      : (document.querySelector(".battery-charging").style.display = "none");
-    if (batteryLevel < 16) {
-      batteryInner.style.background = "#b91c1c";
-    } else if (batteryLevel > 15 && batteryLevel < 31) {
-      batteryInner.style.background = "#fdba74";
-    } else {
-      batteryInner.style.background = "#16a34a";
-    }
-  });
-}, 1000);
-
+const BatteryFunction = () => {
+  setInterval(() => {
+    navigator.getBattery().then((battery) => {
+      let batteryLevel = Math.round(battery.level * 100);
+      let batteryInner = document.querySelector(".battery-inner");
+      document.querySelector(
+        ".battery-percentage"
+      ).innerHTML = `${batteryLevel}%`;
+      batteryInner.style.width = `${batteryLevel}%`;
+      battery.charging
+        ? (document.querySelector(".battery-charging").style.display = "block")
+        : (document.querySelector(".battery-charging").style.display = "none");
+      if (batteryLevel < 16) {
+        batteryInner.style.background = "#b91c1c";
+      } else if (batteryLevel > 15 && batteryLevel < 31) {
+        batteryInner.style.background = "#fdba74";
+      } else {
+        batteryInner.style.background = "#16a34a";
+      }
+    });
+  }, 1000);
+}
+BatteryFunction;
 // Network Script
 let networkImg = document.querySelector(".network-img");
 window.addEventListener("offline", function () {
@@ -266,53 +329,3 @@ window.addEventListener("offline", function () {
 window.addEventListener("online", function () {
   networkImg.src = "https://cdn-icons-png.flaticon.com/128/11433/11433365.png";
 });
-
-// Weather Script
-const apiKey = "db499ac39e76a04aacc125fd196e09be";
-const apiUnit = "metric";
-const apiURL = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=${apiUnit}`;
-window.onload = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        let currentLatitude = position.coords.latitude;
-        let currentLongitude = position.coords.longitude;
-        fetch(`${apiURL}&lat=${currentLatitude}&lon=${currentLongitude}`)
-          .then((response) => response.json())
-          .then((data) => {
-            let temp = Math.round(data.main.temp);
-            document.querySelector(
-              ".tempratue"
-            ).innerHTML = `${temp} <span class="temp-unit"><span class="degree">°</span>C</span>`;
-            let weatherIcon = document.querySelector(".weather-img");
-            let id = data.weather[0].id;
-            if (id == 800) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/bright.png";
-            } else if (id >= 200 && id <= 232) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/dizzle.png";
-            } else if (id >= 600 && id <= 622) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/snow.png";
-            } else if (id >= 701 && id <= 781) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/mist.png";
-            } else if (id >= 801 && id <= 804) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/cloudy.png";
-            } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
-              weatherIcon.src =
-                "https://alihamas.vercel.app/projects/weather_forecast/Images/rain.png";
-            }
-            document.querySelector(".weather-details").style.display = "flex";
-          });
-      },
-      (error) => {
-        alert(
-          `${error.message}. Please allow location to show Weather details.`
-        );
-      }
-    );
-  }
-};

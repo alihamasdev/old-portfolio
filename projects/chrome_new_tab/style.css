@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   background: url("Images/bg_img.jpg") no-repeat center;
   background-size: cover;
@@ -9,7 +9,8 @@ body {
 
 #container {
   width: 100%;
-  height: 675px;
+  height: 100dvh;
+  /* height: 675px; */
   position: relative;
   background-color: rgb(0, 0, 0, 0.3);
   backdrop-filter: blur(0px);
@@ -28,17 +29,14 @@ body {
   gap: 10px;
   cursor: default;
   height: 130px;
-  padding-top: 15px;
   margin-bottom: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-#hour,
-#min,
-#dots {
+#time {
   font-size: 150px;
-  line-height: 100px;
+  line-height: 150px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -353,6 +351,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: end;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 }
 .right-side-btns .right-btn {
   background: rgba(255, 255, 255, 0.25);
@@ -397,6 +399,7 @@ body {
 .network-div img.network-img {
   width: 30px;
 }
+/* battery */
 .right-bottom-div .battery-div {
   height: 50px;
   position: relative;
@@ -422,7 +425,7 @@ body {
   z-index: 2;
   position: absolute;
   top: 50%;
-  left: 65%;
+  left: 60%;
   transform: translateY(-50%);
   filter: invert(100%);
   display: none;
@@ -449,36 +452,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-/* Weather */
-.left-side-btns .weather-div {
-  margin: 30px 0 0 30px;
-  display: flex;
-  flex-direction: column;
-}
-.weather-div .weather-details {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  display: none;
-}
-.weather-details .weather-img {
-  width: 35px;
-}
-.weather-details .tempratue,
-.tempratue .temp-unit {
-  font-size: 30px;
-  font-weight: 600;
-}
-.tempratue .temp-unit {
-  position: relative;
-  margin-left: 2px;
-}
-.tempratue .degree {
-  position: absolute;
-  font-size: 20px;
-  left: -8px;
-  top: -1px;
 }
 /* Open Setting */
 .left-side-btns #open-setting {
