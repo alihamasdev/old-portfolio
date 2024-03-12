@@ -5,7 +5,7 @@ let timeID = document.getElementById("time"),
 
 // Time Function
 function startTime() {
-    let a = new Date(),
+  let a = new Date(),
     bHour = a.getHours(),
     hour = 0,
     bMin = a.getMinutes(),
@@ -17,8 +17,8 @@ function startTime() {
       bHour === 0
         ? (hour = 12)
         : bHour > 12
-          ? (hour = bHour - 12)
-          : (hour = bHour);
+        ? (hour = bHour - 12)
+        : (hour = bHour);
     } else {
       hour = bHour;
     }
@@ -64,76 +64,16 @@ function startTime() {
   adding0();
 
   // Printing Time
-  timeID.innerHTML = `${hour}:${min}`
+  timeID.innerHTML = `${hour}:${min}`;
   setTimeout(startTime, 1000);
 }
+
+// Body Onload Functions
 document.body.onload = startTime();
-
-
-// setInterval(() => {
-//   let a = new Date(),
-//     bHour = a.getHours(),
-//     hour = 0,
-//     bMin = a.getMinutes(),
-//     min = 0;
-
-//   //Hour format
-//   function hourFormat() {
-//     if (Radio12Hr.checked) {
-//       bHour === 0
-//         ? (hour = 12)
-//         : bHour > 12
-//           ? (hour = bHour - 12)
-//           : (hour = bHour);
-//     } else {
-//       hour = bHour;
-//     }
-//   }
-
-//   // Time Zone
-//   function timeZone() {
-//     if (Radio12Hr.checked === true) {
-//       if (bHour > 11) {
-//         zoneID.innerHTML = "PM";
-//       } else {
-//         zoneID.innerHTML = "AM";
-//       }
-//     } else if (Radio12Hr.checked === false) {
-//       zoneID.innerHTML = "";
-//     }
-//   }
-
-//   // Day Time
-//   function dayTime() {
-//     if (bHour >= 5 && bHour < 12) {
-//       dayTimeID.innerHTML = "Good Morning, ";
-//     } else if (bHour >= 12 && bHour < 16) {
-//       dayTimeID.innerHTML = "Good After Noon, ";
-//     } else if (bHour >= 16 && bHour < 21) {
-//       dayTimeID.innerHTML = "Good Evening, ";
-//     } else {
-//       dayTimeID.innerHTML = "Good Night, ";
-//     }
-//   }
-
-//   // Adding 0 to minutes
-//   function adding0() {
-//     bMin < 10 ? (min = `0${bMin}`) : (min = bMin);
-//     if (Radio24Hr.checked) {
-//       bHour < 10 ? (hour = `0${bHour}`) : (hour = bHour);
-//     }
-//   }
-
-//   hourFormat();
-//   timeZone();
-//   dayTime();
-//   adding0();
-
-//   // Printing Time
-//   timeID.innerHTML = `${hour}:${min}`
-// }, 1000);
+document.body.onload = BatteryFunction();
 
 window.onclick = function (event) {
+  localStorage.setItem("shortcut-container", shortcutContainer.innerHTML);
   // Close Setting on Outside Click
   let clickInsideSetting = event.target.closest("#setting-box");
   let clickInsideOpenSettingBtn = event.target.closest("#open-setting");
@@ -209,7 +149,6 @@ document.body.addEventListener("click", function () {
 let newShortcutBox = document.getElementById("add-shortcut-box");
 let newShortcutBtn = document.getElementById("new-shortcut");
 newShortcutBtn.addEventListener("click", showNewShortcutBox);
-newShortcutBtn.addEventListener("dblclick", showNewShortcutBox);
 function showNewShortcutBox() {
   newShortcutBox.style.width = "400px";
   container.style.backdropFilter = "blur(20px)";
@@ -298,29 +237,28 @@ addShortcutForm.addEventListener("submit", function (event) {
 });
 
 // Battery Script
-const BatteryFunction = () => {
-  setInterval(() => {
-    navigator.getBattery().then((battery) => {
-      let batteryLevel = Math.round(battery.level * 100);
-      let batteryInner = document.querySelector(".battery-inner");
-      document.querySelector(
-        ".battery-percentage"
-      ).innerHTML = `${batteryLevel}%`;
-      batteryInner.style.width = `${batteryLevel}%`;
-      battery.charging
-        ? (document.querySelector(".battery-charging").style.display = "block")
-        : (document.querySelector(".battery-charging").style.display = "none");
-      if (batteryLevel < 16) {
-        batteryInner.style.background = "#b91c1c";
-      } else if (batteryLevel > 15 && batteryLevel < 31) {
-        batteryInner.style.background = "#fdba74";
-      } else {
-        batteryInner.style.background = "#16a34a";
-      }
-    });
-  }, 1000);
+function BatteryFunction() {
+  navigator.getBattery().then((battery) => {
+    let batteryLevel = Math.round(battery.level * 100);
+    let batteryInner = document.querySelector(".battery-inner");
+    document.querySelector(
+      ".battery-percentage"
+    ).innerHTML = `${batteryLevel}%`;
+    batteryInner.style.width = `${batteryLevel}%`;
+    battery.charging
+      ? (document.querySelector(".battery-charging").style.display = "block")
+      : (document.querySelector(".battery-charging").style.display = "none");
+    if (batteryLevel < 16) {
+      batteryInner.style.background = "#b91c1c";
+    } else if (batteryLevel > 15 && batteryLevel < 31) {
+      batteryInner.style.background = "#fdba74";
+    } else {
+      batteryInner.style.background = "#16a34a";
+    }
+    setInterval(BatteryFunction, 1000);
+  });
 }
-BatteryFunction;
+
 // Network Script
 let networkImg = document.querySelector(".network-img");
 window.addEventListener("offline", function () {
