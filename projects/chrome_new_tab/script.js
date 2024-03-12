@@ -5,7 +5,7 @@ let timeID = document.getElementById("time"),
 
 // Time Function
 function startTime() {
-  let a = new Date(),
+    let a = new Date(),
     bHour = a.getHours(),
     hour = 0,
     bMin = a.getMinutes(),
@@ -17,8 +17,8 @@ function startTime() {
       bHour === 0
         ? (hour = 12)
         : bHour > 12
-        ? (hour = bHour - 12)
-        : (hour = bHour);
+          ? (hour = bHour - 12)
+          : (hour = bHour);
     } else {
       hour = bHour;
     }
@@ -64,16 +64,13 @@ function startTime() {
   adding0();
 
   // Printing Time
-  timeID.innerHTML = `${hour}:${min}`;
+  timeID.innerHTML = `${hour}:${min}`
   setTimeout(startTime, 1000);
 }
-
-// Body Onload Functions
 document.body.onload = startTime();
 document.body.onload = BatteryFunction();
 
 window.onclick = function (event) {
-  localStorage.setItem("shortcut-container", shortcutContainer.innerHTML);
   // Close Setting on Outside Click
   let clickInsideSetting = event.target.closest("#setting-box");
   let clickInsideOpenSettingBtn = event.target.closest("#open-setting");
@@ -149,6 +146,7 @@ document.body.addEventListener("click", function () {
 let newShortcutBox = document.getElementById("add-shortcut-box");
 let newShortcutBtn = document.getElementById("new-shortcut");
 newShortcutBtn.addEventListener("click", showNewShortcutBox);
+newShortcutBtn.addEventListener("dblclick", showNewShortcutBox);
 function showNewShortcutBox() {
   newShortcutBox.style.width = "400px";
   container.style.backdropFilter = "blur(20px)";
@@ -237,7 +235,7 @@ addShortcutForm.addEventListener("submit", function (event) {
 });
 
 // Battery Script
-function BatteryFunction() {
+function BatteryFunction(){
   navigator.getBattery().then((battery) => {
     let batteryLevel = Math.round(battery.level * 100);
     let batteryInner = document.querySelector(".battery-inner");
@@ -255,7 +253,7 @@ function BatteryFunction() {
     } else {
       batteryInner.style.background = "#16a34a";
     }
-    setInterval(BatteryFunction, 1000);
+    setInterval(BatteryFunction, 1000)
   });
 }
 
