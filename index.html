@@ -14,38 +14,38 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="header-left">
+                <!-- logo -->
+                <a href="">
+                    <span id="logo-title"><i class="fa-solid fa-code"></i> Ali Hamas</span>
+                </a>
+            </div>
+            <i class="hamburger fa fa-bars" onclick="showNavbar()"></i>
+            <div class="header-right">
+                <!-- nav links -->
+                <nav>
+                    <ul>
+                        <li><a href="" class="underline-transform">Home</a></li>
+                        <li><a href="#about" class="underline-transform">About</a></li>
+                        <li><a href="#skills" class="underline-transform">Skills</a></li>
+                        <li><a href="#projects" class="underline-transform">Projects</a></li>
+                        <li><a href="#contact" class="underline-transform">Contact</a></li>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
     <!-- Home Section -->
     <section id="home-sec">
-        <!-- Header -->
-        <header id="header">
-            <div class="header-content">
-                <div class="header-left">
-                    <!-- logo -->
-                    <a href="">
-                        <span id="logo-title"><i class="fa-solid fa-code"></i> Ali Hamas</span>
-                    </a>
-                </div>
-                <div class="header-right">
-                    <!-- nav links -->
-                    <nav>
-                        <i class="fa fa-bars"></i>  
-                        <ul>
-                            <li><a href="" class="underline-transform">Home</a></li>
-                            <li><a href="#about" class="underline-transform">About</a></li>
-                            <li><a href="#skills" class="underline-transform">Skills</a></li>
-                            <li><a href="#projects" class="underline-transform">Projects</a></li>
-                            <li><a href="#contact" class="underline-transform">Contact</a></li>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div class="home-sec-content sec-content" data-aos="fade-up" data-aos-duration="800">
+        <div class="home-sec-content sec-content" data-aos="fade-up">
             <div class="left-home-sec">
                 <span class="hello-text">Hello,</span>
                 <h1 class="name-text">I AM <span class="name">ALI HAMAS</span></h1>
-                <h1 class="name-text">A Passionate <span class="name" id="element"></span></h1>
+                <h1 class="name-text">A Passionate <span class="name" id="element">Web Developer</span></h1>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/ali-hamas" target="_blank">
                         <i class="fa-brands fa-linkedin-in linkedin-icon"></i></a>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="right-home-sec">
-                <img src="/images/developer.png" alt="Developer Image" class="developer-img" width="300px">
+                <img src="/images/developer.png" alt="Developer Image" class="developer-img">
             </div>
         </div>
     </section>
@@ -62,14 +62,14 @@
     <!-- About Section -->
     <section id="about">
         <div class="sec-heading">
-            <h1 data-aos="fade-up" data-aos-duration="800">ABOUT ME</h1>
+            <a href="#about" data-aos="flip-right">ABOUT ME</a>
         </div>
-        <div class="sec-content about-sec-content" data-aos="fade-up" data-aos-duration="800">
+        <div class="sec-content about-sec-content" data-aos="fade-up">
             <div class="left-about-sec">
                 <img src="/images/my_image.jpg" alt="Profile Image">
             </div>
             <div class="right-about-sec">
-                <p>I am a Frontened Web Developer with the experience of 2 years who can makes frontened of website with
+                <p>I am a Frontened Web Developer with the experience of 2 years who makes frontened of website with
                     <b>HTML, CSS & JavaScript.</b>
                     Ahead of these, i can also make SEO friendly & fully functional Websites in
                     <b>Wordpress</b> including e-commerce store which can boost your online buisness. <br><br>
@@ -87,10 +87,10 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="sec-heading">
-            <h1 data-aos="fade-up" data-aos-duration="800">SKILLS</h1>
+            <a href="#skills" data-aos="flip-right">SKILLS</a>
         </div>
         <div class="sec-content skills-sec-content">
-            <div class="skill-box" data-aos="fade-right" data-aos-duration="800">
+            <div class="skill-box" data-aos="fade-right">
                 <div class="skill-icon">
                     <i class="fa-brands fa-4x fa-wordpress"></i>
                     <i class="fa-brands fa-4x fa-elementor"></i>
@@ -101,7 +101,7 @@
                     <span class="skill-percent wordpress"></span>
                 </div>
             </div>
-            <div class="skill-box" data-aos="fade-up" data-aos-duration="800">
+            <div class="skill-box" data-aos="fade-up">
                 <div class="skill-icon">
                     <i class="fa-brands fa-4x fa-html5"></i>
                     <i class="fa-brands fa-4x fa-css3-alt"></i>
@@ -112,9 +112,9 @@
                     <span class="skill-percent html"></span>
                 </div>
             </div>
-            <div class="skill-box" data-aos="fade-left" data-aos-duration="800">
+            <div class="skill-box" data-aos="fade-left">
                 <div class="skill-icon">
-                    <svg fill="#ffffff" width="100px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    <svg fill="#ffffff" height="80px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                         xml:space="preserve">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z" />
@@ -126,7 +126,7 @@
                     <span class="skill-percent tailwind"></span>
                 </div>
             </div>
-            <div class="skill-box" data-aos="fade-right" data-aos-duration="800">
+            <div class="skill-box" data-aos="fade-right">
                 <div class="skill-icon"><i class="fa-brands fa-4x fa-square-js"></i></div>
                 <div class="skill-title">JavaScript</div>
                 <div class="skill-text">Intermediate</div>
@@ -134,7 +134,7 @@
                     <span class="skill-percent js"></span>
                 </div>
             </div>
-            <div class="skill-box" data-aos="fade-up" data-aos-duration="800">
+            <div class="skill-box" data-aos="fade-up">
                 <div class="skill-icon"><i class="fa-brands fa-4x fa-git-alt"></i><i
                         class="fa-brands fa-4x fa-github"></i></div>
                 <div class="skill-title">Git & GitHub</div>
@@ -143,10 +143,12 @@
                     <span class="skill-percent git"></span>
                 </div>
             </div>
-            <div class="skill-box" data-aos="fade-left" data-aos-duration="800">
-                <div class="skill-icon"><i class="fa-brands fa-4x fa-react"></i></div>
-                <div class="skill-title">React Js</div>
-                <div class="skill-text">Beginner</div>
+            <div class="skill-box" data-aos="fade-left">
+                <div class="skill-icon"><i class="fa-brands fa-4x fa-react"></i>
+                <svg fill="#000000" height="64px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M23.749 30.005c-0.119 0.063-0.109 0.083 0.005 0.025 0.037-0.015 0.068-0.036 0.095-0.061 0-0.021 0-0.021-0.1 0.036zM23.989 29.875c-0.057 0.047-0.057 0.047 0.011 0.016 0.036-0.021 0.068-0.041 0.068-0.047 0-0.027-0.016-0.021-0.079 0.031zM24.145 29.781c-0.057 0.047-0.057 0.047 0.011 0.016 0.037-0.021 0.068-0.043 0.068-0.048 0-0.025-0.016-0.020-0.079 0.032zM24.303 29.688c-0.057 0.047-0.057 0.047 0.009 0.015 0.037-0.020 0.068-0.041 0.068-0.047 0-0.025-0.016-0.020-0.077 0.032zM24.516 29.547c-0.109 0.073-0.147 0.12-0.047 0.068 0.067-0.041 0.181-0.131 0.161-0.131-0.043 0.016-0.079 0.043-0.115 0.063zM14.953 0.011c-0.073 0.005-0.292 0.025-0.484 0.041-4.548 0.412-8.803 2.86-11.5 6.631-1.491 2.067-2.459 4.468-2.824 6.989-0.129 0.88-0.145 1.14-0.145 2.333 0 1.192 0.016 1.448 0.145 2.328 0.871 6.011 5.147 11.057 10.943 12.927 1.043 0.333 2.136 0.563 3.381 0.704 0.484 0.052 2.577 0.052 3.061 0 2.152-0.24 3.969-0.771 5.767-1.688 0.276-0.14 0.328-0.177 0.291-0.208-0.88-1.161-1.744-2.323-2.609-3.495l-2.557-3.453-3.203-4.745c-1.068-1.588-2.14-3.172-3.229-4.744-0.011 0-0.025 2.109-0.031 4.681-0.011 4.505-0.011 4.688-0.068 4.792-0.057 0.125-0.151 0.229-0.276 0.287-0.099 0.047-0.188 0.057-0.661 0.057h-0.541l-0.141-0.088c-0.088-0.057-0.161-0.136-0.208-0.229l-0.068-0.141 0.005-6.271 0.011-6.271 0.099-0.125c0.063-0.077 0.141-0.14 0.229-0.187 0.131-0.063 0.183-0.073 0.724-0.073 0.635 0 0.74 0.025 0.907 0.208 1.296 1.932 2.588 3.869 3.859 5.812 2.079 3.152 4.917 7.453 6.312 9.563l2.537 3.839 0.125-0.083c1.219-0.813 2.328-1.781 3.285-2.885 2.016-2.308 3.324-5.147 3.767-8.177 0.129-0.88 0.145-1.141 0.145-2.333 0-1.193-0.016-1.448-0.145-2.328-0.871-6.011-5.147-11.057-10.943-12.928-1.084-0.343-2.199-0.577-3.328-0.697-0.303-0.031-2.371-0.068-2.631-0.041zM21.5 9.688c0.151 0.072 0.265 0.208 0.317 0.364 0.027 0.084 0.032 1.823 0.027 5.74l-0.011 5.624-0.989-1.52-0.995-1.521v-4.083c0-2.647 0.011-4.131 0.025-4.204 0.047-0.167 0.161-0.307 0.313-0.395 0.124-0.063 0.172-0.068 0.667-0.068 0.463 0 0.541 0.005 0.645 0.063z"></path> </g></svg>    
+                </div>
+                <div class="skill-title">React Js & Next Js</div>
+                <div class="skill-text">Intermediate</div>
                 <div class="skill-bar">
                     <span class="skill-percent react"></span>
                 </div>
@@ -157,86 +159,94 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="sec-heading">
-            <h1 data-aos="fade-up" data-aos-duration="800">PROJECTS</h1>
+            <a href="#projects" data-aos="flip-right">PROJECTS</a>
         </div>
         <div class="sec-content projects-sec-content">
-            <div class="project" data-aos="fade-right" data-aos-duration="800">
+            <!-- Twitter Clone -->
+            <div class="project" data-aos="fade-right">
                 <a href="/projects/twitter_clone/" class="project-img">
                     <img src="/projects/twitter_clone/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Twitter Clone</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/twitter_clone/" class="project-title underline-transform">Twitter Clone</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="https://github.com/ali-hamas/Twitter_Clone" target="_blank"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-duration="800">
+            <!-- iTab -->
+            <div class="project" data-aos="fade-up">
                 <a href="/projects/chrome_new_tab/" class="project-img">
                     <img src="/projects/chrome_new_tab/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Chrome New Tab</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/chrome_new_tab/" class="project-title underline-transform">Chrome New Tab</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="https://github.com/ali-hamas/Chrome_New_Tab" target="_blank"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-left" data-aos-duration="800">
+            <!-- Netflix Clone -->
+            <div class="project" data-aos="fade-left">
                 <a href="/projects/netflix_clone/" class="project-img">
                     <img src="/projects/netflix_clone/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Netflix Clone</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/netflix_clone/" class="project-title underline-transform">Netflix Clone</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="https://github.com/ali-hamas/Netflix_Clone" target="_blank"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-right" data-aos-duration="500">
+            <!-- Weather Forecast -->
+            <div class="project" data-aos="fade-right" >
                 <a href="/projects/weather_forecast/" class="project-img">
                     <img src="/projects/weather_forecast/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Weather Forecast</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/weather_forecast/" class="project-title underline-transform">Weather Forecast</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="https://github.com/ali-hamas/Weather-App" target="_blank"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-duration="500">
+            <!-- Calculator -->
+            <div class="project" data-aos="fade-up" >
                 <a href="/projects/calculator/" class="project-img">
                     <img src="/projects/calculator/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Calculator</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/calculator/" class="project-title underline-transform">Calculator</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="#"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-left" data-aos-duration="500">
+            <!-- Music Player -->
+            <div class="project" data-aos="fade-left" >
                 <a href="/projects/music_player/" class="project-img">
                     <img src="/projects/music_player/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Music Player</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/music_player/" class="project-title underline-transform">Music Player</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="#"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-right" data-aos-duration="500">
+            <!-- QR Code Generator -->
+            <div class="project" data-aos="fade-right" >
                 <a href="/projects/qr_code_generator/" class="project-img">
                     <img src="/projects/qr_code_generator/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">QR Code Generator</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/qr_code_generator/" class="project-title underline-transform">QR Code Generator</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="#"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
-            <div class="project" data-aos="fade-up" data-aos-duration="500">
+            <!-- Daily Qoute -->
+            <div class="project" data-aos="fade-up" >
                 <a href="/projects/daily_qoute/" class="project-img">
                     <img src="/projects/daily_qoute/project_img.png">
                 </a>
                 <div class="project-details">
-                    <div class="project-title">Daily Qoute</div>
-                    <div class="project-desc">A simple JavaScript API project of qr-code generator that takes input and shows qr-code.</div>
+                    <a href="/projects/daily_qoute/" class="project-title underline-transform">Daily Qoute</a>
+                    <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit adipisci molestiae perspiciatis necessitatibus laborum soluta!</div>
                     <button><a href="#"><i class="fa-brands fa-github"></i>Code</a></button>
                 </div>
             </div>
@@ -248,11 +258,11 @@
         <div class="sec-content contact-sec-content">
             <div class="left-contact-sec" >
                 <div class="sec-heading secondry-heading">
-                    <h1 data-aos="fade-up" data-aos-duration="800">CONTACT US</h1>
+                    <a href="#contact" data-aos="flip-right">CONTACT US</a>
                 </div>
-                <div class="left-contact-content" data-aos="fade-up" data-aos-duration="800">
+                <div class="left-contact-content" data-aos="fade-right">
                     <div>
-                        <p>Do You Have A Question Or Do You Want To Work With Us? Feel free to get in touch with us.</p>
+                        <p class="contact-text">Do You Have A Question Or Do You Want To Work With Us?<br>Feel free to get in touch with us.</p>
                     </div>
                     <div class="contact-detail-box">
                         <div class="contact-icon">
@@ -276,10 +286,10 @@
             </div>
             <div class="right-contact-sec">
                 <div class="sec-heading secondry-heading">
-                    <h1 data-aos="fade-up" data-aos-duration="800">DROP A LINE</h1>
+                    <a href="#contact" data-aos="flip-right">DROP A LINE</a>
                 </div>
                 <!-- contact form -->
-                <form class="contact-form" autocomplete="off" data-aos="fade-up" data-aos-duration="800" netlify>
+                <form class="contact-form" autocomplete="off" data-aos="fade-left">
                     <input type="text" id="f-name" placeholder="First Name">
                     <input type="text" id="l-name" placeholder="Last Name">
                     <input type="email" id="email" placeholder="Email">
@@ -306,11 +316,27 @@
         </div>
     </footer>
 
+    <!-- AOS script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({duration:500,});
+        AOS.init({duration:800});
     </script>
-    <script src="/script.js"></script>
+
+    <!-- NavBar script -->
+    <!-- <script>
+        function showNavbar(){
+            let hamburger = document.querySelector(".hamburger");
+            hamburger.classList.toggle("fa-bars");
+            hamburger.classList.toggle("fa-xmark");
+            let navbar = document.querySelector(".header-right");
+            if(hamburger.classList.contains("fa-xmark")){
+                navbar.style.width = "100vw";
+            }
+            else{
+                navbar.style.width = "0vw";
+            }
+        }
+    </script> -->
 
     <!-- Header Script -->
     <script>
@@ -327,30 +353,6 @@
                     logoTitle.classList.remove("logo-font");
                 }
             }
-        }
-    </script>
-
-    <!-- Go to Top -->
-    <script>
-        function goToTop(){
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0; 
-        }
-    </script>
-
-    <!-- TypeScript -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed("#element", {
-            strings: ["Web Developer", "Designer", "Freelancer", "SEO Expert"],
-            typeSpeed: 50,
-            loop: true,
-        });
-        function onlyNumberKey(evt) {
-            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-                return false;
-            return true;
         }
     </script>
 </body>

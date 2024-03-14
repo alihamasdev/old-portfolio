@@ -1,32 +1,31 @@
 /* <--------------------------------- utility classes ---------------------------------> */
+body {
+  width: 100vw;
+}
 section {
   width: 100vw;
-  padding: 50px 0;
+  padding: 70px 0;
 }
-
 .sec-content {
+  width: 90vw;
+  margin: 0 auto;
   flex-direction: column;
 }
-
 .sec-heading {
-  width: 80%;
-  margin: 0 auto;
   padding-bottom: 30px;
 }
-
-.sec-heading h1 {
-  font-size: 1.5rem; 
-}
-
 .secondry-heading {
   width: 80%;
   margin: 0 auto;
 }
-
 .secondry-heading h1 {
   text-align: center;
 }
-
+.button-group {
+  margin: 0 auto;
+  width: 70%;
+  flex-direction: column;
+}
 .btn {
   padding: 10px 10px;
   border: 1px solid var(--primaryColor);
@@ -35,71 +34,116 @@ section {
   justify-content: center;
   align-items: center;
 }
-
 .btn a {
   font-size: 1rem;
   font-weight: 600;
+}
+.underline-transform::before {
+  background-color: transparent;
+}
+.fill-btn:hover::before {
+  transform: scaleX(1);
+}
+.hollow-btn:hover::before {
+  transform: scaleX(0);
 }
 
 /* <--------------------------------- mobile.css ---------------------------------> */
 header {
   width: 100vw;
-  height: 10vh;
-  font-size: 1.25rem;
+  height: 60px;
   background-color: var(--secondryBackground);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   position: fixed;
   top: 0;
 }
+header .header-content {
+  width: 90%;
+  margin: 0 auto;
+}
 
 .header-left span#logo-title {
-  font-size: 1.25rem;
+  font-size: 20px;
 }
-
-nav i.fa-bars {
-  display: inline;
+/* Navbar */
+i.fa-bars,
+i.fa-xmark {
+  display: block;
+  font-size: 20px;
 }
-
+.header-right {
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  width: 0vw;
+  height: calc(100dvh - 60px);
+  background-color: rgb(27, 33, 46);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.header-right nav {
+  height: 100%;
+}
+.header-right nav ul {
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 30px;
+}
 ul li {
-  display: none;
+  width: 100%;
 }
-
+ul li a {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
 /* main-sec */
 #main-sec {
   width: 100vw;
-  height: 90vh;
-  margin-top: 10vh !important;
 }
 
-#main-sec .main-sec-content {
-  width: 80%;
+#home-sec .home-sec-content {
+  width: 90%;
   margin: 0 auto;
   display: flex;
-  align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: column;
 }
 
-.left-main-sec {
+.left-home-sec {
   width: 100%;
 }
 
-.left-main-sec .hello-text {
-  font-size: 0.75rem;
+.left-home-sec .hello-text {
+  font-size: 18px;
+  text-align: center;
 }
 
-.left-main-sec .name-text {
-  font-size: 1.15rem;
+.left-home-sec .name-text {
+  font-size: 26px;
+  text-align: center;
+}
+.social-icons {
+  justify-content: center;
+  gap: 10px;
 }
 
-.right-main-sec {
+.social-icons i {
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.right-home-sec {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.right-main-sec img {
+.right-home-sec img {
   width: 200px;
 }
 
@@ -119,24 +163,27 @@ ul li {
 .about-sec-content .right-about-sec {
   width: 100%;
 }
-
-/* Skills Section */
+.right-about-sec p {
+  text-align: center;
+}
 
 /* Projects */
-
-/* Testimonial Section */
-#testimonial .testimonial-sec-content {
-  grid-template-columns: 1fr;
-  gap: 50px;
+.projects-sec-content {
+  width: 80%;
+  grid-template-columns: repeat(1, 1fr);
 }
-
-.testimonial:first-child {
-  display: none;
+.project-img:hover img {
+  transform: scale(1);
 }
-
 /* Contact Section */
+.secondry-heading.sec-heading {
+  justify-content: center;
+}
 .contact-sec-content .left-contact-sec {
   width: 100%;
+}
+p.contact-text {
+  text-align: center;
 }
 
 .contact-sec-content .right-contact-sec {
@@ -152,6 +199,10 @@ form {
 form textarea {
   grid-column-start: 1;
   grid-column-end: 1;
+}
+form input,
+form textarea {
+  text-align: center;
 }
 
 /* Footer */
